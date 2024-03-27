@@ -16,6 +16,16 @@ var Stats = function () {
 	}, false );
 
 	//
+	// Add the getPanel method to the Stats prototype
+	    Stats.prototype.getPanel = function(name) {
+	        for (let i = 0; i < this.dom.children.length; i++) {
+	            const panel = this.dom.children[i];
+	            if (panel.textContent === name) {
+	                return panel;
+	            }
+	        }
+	        return null;
+	    };
 
 	function addPanel( panel ) {
 
